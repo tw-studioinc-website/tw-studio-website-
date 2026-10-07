@@ -20,18 +20,20 @@ dialog{padding:0;border:0;width:100vw;max-width:none;height:100dvh;max-height:no
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-image img{transition:none}}
 @media(max-width:760px){html{scroll-padding-top:65px}.site-header{height:64px}.menu-button{display:block}.nav-wrap{gap:12px}nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);padding:18px var(--pad) 28px;border-bottom:1px solid var(--line);flex-direction:column;gap:3px}nav.open{display:flex}nav a{font:500 24px var(--display);padding:9px 0}.lang-toggle{padding-left:12px;min-width:58px}.hero{height:74vh;min-height:520px}.hero img{object-position:57% center}.hero:after{background:linear-gradient(0deg,rgba(4,8,11,.67),transparent 75%)}.hero-copy{bottom:34px}.hero h1{font-size:40px}.intro{grid-template-columns:1fr;padding-top:72px;padding-bottom:82px;gap:30px}.intro p{font-size:30px}.section-head{align-items:start;flex-direction:column;padding-top:32px}.section-head p{font-size:14px}.projects-grid{display:block}.project-card,.project-card:nth-child(n){display:block;width:100%;margin:0 0 44px}.project-card[hidden]{display:none}.project-card:nth-child(n) .project-image{aspect-ratio:4/3}.project-meta h3{font-size:24px}.service{grid-template-columns:36px 1fr;gap:14px 10px;padding:26px 0}.service p{grid-column:2}.studio-grid{grid-template-columns:1fr}.studio-image{min-height:0;aspect-ratio:4/5}.contact-grid{grid-template-columns:1fr}.detail-intro{grid-template-columns:1fr;gap:30px}.facts{grid-template-columns:repeat(2,1fr);gap:24px 16px}.gallery{grid-template-columns:1fr}.gallery>img,.gallery>img:first-child{grid-column:auto;aspect-ratio:4/3}.gallery-main{aspect-ratio:4/3}.gallery-thumbs{gap:6px}.gallery-thumb{width:40px;flex-basis:40px}.gallery-title{font-size:17px;margin-bottom:14px}.gallery-section+ .gallery-section{margin-top:68px}footer{grid-template-columns:1fr;align-items:start}.footer-brand .brand-mark{width:72px;height:72px}}
   
-/* ---- SWA-style project tiles (2-col full-bleed, overlay titles) ---- */
-.projects-grid{grid-template-columns:1fr 1fr;gap:3px;padding-left:0;padding-right:0}
-.project-card{grid-column:auto;position:relative;overflow:hidden;background:#111;border-radius:0;text-align:left}
-.project-card .project-image{aspect-ratio:16/10}
+/* ---- Projects page: 2-col cards, image top + info below ---- */
+.projects-grid{grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px) clamp(20px,3vw,48px);padding-bottom:clamp(90px,12vw,170px)}
+.project-card{grid-column:auto;text-align:left}
+.project-card .project-image{aspect-ratio:4/3}
 .project-card .project-image img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.001);transition:transform .8s cubic-bezier(.2,.6,.2,1)}
-.project-card:hover .project-image img{transform:scale(1.045)}
-.project-card .project-meta{position:absolute;left:0;right:0;bottom:0;z-index:2;margin:0;padding:64px 26px 24px;text-align:right;background:linear-gradient(to top,rgba(0,0,0,.68) 0%,rgba(0,0,0,0) 100%)}
-.project-card .project-meta h3{color:#fff;font-size:clamp(24px,3vw,40px);font-weight:700;letter-spacing:-.015em;margin:0}
-.project-card .project-meta p{color:rgba(255,255,255,.88);font-size:13px;letter-spacing:.02em;margin:8px 0 0}
+.project-card:hover .project-image img{transform:scale(1.04)}
+.project-card .project-meta{padding-top:18px}
+.project-card .project-meta h3{font-size:clamp(20px,2.2vw,28px);margin:0}
+.project-card .project-meta p{color:var(--muted);font-size:14px;margin:8px 0 0}
+.page-hero{height:min(54vh,560px);min-height:380px}
+.page-hero .hero-copy h1{margin:0 0 14px}
+.page-hero .hero-copy p{max-width:640px;color:rgba(255,255,255,.92);font-size:17px;line-height:1.65;margin:0}
 #mainNav a.active{color:var(--accent)}
-.page-head{padding:calc(72px + clamp(28px,5vw,64px)) var(--pad) 8px}
-@media(max-width:720px){.projects-grid{grid-template-columns:1fr}.project-card .project-meta h3{font-size:26px}}
+@media(max-width:720px){.projects-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
